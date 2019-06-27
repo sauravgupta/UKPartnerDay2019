@@ -8,7 +8,7 @@ Class WordGame.impl Extends %REST.Impl [ ProcedureBlock ]
 Parameter ExposeServerExceptions = 0;
 
 /// Return the score by counting the number of letters in the provided word<br/>
-/// The method arguments hold values for:<br/>
+/// The method arguments hold values:<br/>
 /// word<br/>
 ClassMethod Score(word As %String) As %DynamicObject
 {
