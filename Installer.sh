@@ -21,7 +21,8 @@ printf "\n\nLoading Installer..."
 
 # This, on the other hand, should never fail and as it depends on the existence of the previous class
 # it may fail if it hasn't been loaded correctly. 
-printf "%s\n%s\nzn \"%s\"\nSet tSC=\$system.OBJ.Load(\"%s\",\"ck\")\n$VerifySC\n" "$IRIS_USERNAME" "$IRIS_PASSWORD" "%SYS" "/opt/app/UKPartnerDay2019/Installer.cls" | irissession IRIS
+printf "%s\n%s\nzn \"%s\"\nSet tSC=\$system.OBJ.Load(\"%s\",\"ck\")\n" "$IRIS_USERNAME" "$IRIS_PASSWORD" "%SYS" "/opt/app/UKPartnerDay2019/IRISConfig/InstallerBase.cls" | irissession IRIS
+printf "%s\n%s\nzn \"%s\"\nSet tSC=\$system.OBJ.Load(\"%s\",\"ck\")\n$VerifySC\n" "$IRIS_USERNAME" "$IRIS_PASSWORD" "%SYS" "/opt/app/UKPartnerDay2019/IRISConfig/Installer.cls" | irissession IRIS
 
 # Running the installer...
 printf "\n\nRunning Installer..."
