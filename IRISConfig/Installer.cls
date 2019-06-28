@@ -55,6 +55,10 @@ XData Install [ XMLNamespace = INSTALLER ]
 		<Invoke Class="IRISConfig.Installer" Method="CSPAppConfigureAsREST" CheckStatus="true">
 			<Arg name="pCSPAppName" Value="/csp/${CSPAppName}/rest"/>
 		</Invoke>
+		<Log Text="Applying additional configurations to the Wordgame REST CSP Application..." Level="0"/>
+		<Invoke Class="IRISConfig.Installer" Method="CSPAppConfigureAsRESTWordGame" CheckStatus="true">
+			<Arg name="pCSPAppName" Value="/WordGame"/>
+		</Invoke>
 	</Manifest>
 	}
 }
