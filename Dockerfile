@@ -21,4 +21,5 @@ ENV IRIS_USERNAME="SuperUser"
 ENV IRIS_PASSWORD="SYS"
 #Pull Code
 RUN git clone https://github.com/sauravgupta/UKPartnerDay2019
-#RUN /opt/app/UKPartnerDay2019/Installer.sh
+RUN ["chmod", "+x", "/opt/app/UKPartnerDay2019/Installer.sh"]
+RUN /opt/app/UKPartnerDay2019/Installer.sh
