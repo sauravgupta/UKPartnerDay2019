@@ -1,0 +1,1 @@
+FROM store/intersystems/iris:2019.2.0.107.0-community
