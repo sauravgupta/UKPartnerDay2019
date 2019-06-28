@@ -18,8 +18,9 @@ ENV IRIS_APP_NAME="Demo"
 ENV IRIS_USERNAME="SuperUser" 
 
 # Used by runinstaller.sh and to set instance's default password (this is just a demo!)
-ENV IRIS_PASSWORD="sys"
+ENV IRIS_PASSWORD="SYS"
 #Pull Code
 RUN git clone https://github.com/sauravgupta/UKPartnerDay2019
+RUN echo "$IRIS_PASSWORD" >> /tmp/pwd.isc && /usr/irissys/dev/Cloud/ICM/changePassword.sh /tmp/pwd.isc
 RUN ["chmod", "+x", "/opt/app/UKPartnerDay2019/Installer.sh"]
 RUN /opt/app/UKPartnerDay2019/Installer.sh
