@@ -8,7 +8,7 @@ ARG IRIS_PROJECT_FOLDER_NAME=/opt/app/
 
 # Used to specify a folder on the container with the source code (csp pages, classes, etc.)
 # to load into the application.
-ENV IRIS_APP_SOURCEDIR=/opt/app/UKPartneryDay2019
+ENV IRIS_APP_SOURCEDIR=/opt/app/UKPartnerDay2019
 
 # Name of the application. This will be used to define the namespace, database and 
 # name of the CSP application of this application.
