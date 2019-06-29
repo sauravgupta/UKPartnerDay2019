@@ -38,6 +38,7 @@ XData Install [ XMLNamespace = INSTALLER ]
 	        
 	        <CSPApplication Url="/csp/${CSPAppName}/rest" Directory="${CSPDIR}${CSPAppName}" AuthenticationMethods="#{##class(IRISConfig.Installer).AuthForREST()}" Recurse="true" IsNamespaceDefault="false" Grant="AppRole" CookiePath="/csp/${CSPAppName}" AutoCompile="false" CSPZENEnabled="true" InboundWebServicesEnabled="false" GroupById="${CSPAppName}" UseSessionCookie="1" PermittedClasses='1""IRISDemo.REST."".E' DispatchClass="IRISDemo.REST.Dispatcher"/>
 	        <CSPApplication Url="/csp/${CSPAppName}"      Directory="${CSPDIR}${CSPAppName}" AuthenticationMethods="#{##class(IRISConfig.Installer).AuthForCSP()}" Recurse="true" IsNamespaceDefault="true"  Grant="AppRole" CookiePath="/csp/${CSPAppName}" AutoCompile="false" CSPZENEnabled="true" InboundWebServicesEnabled="false" GroupById="${CSPAppName}" UseSessionCookie="1"/>
+			<CSPApplication Url="/WordGame"      Directory="${CSPDIR}${CSPAppName}" AuthenticationMethods="#{##class(IRISConfig.Installer).AuthForREST()}" Recurse="true" IsNamespaceDefault="true"  Grant="AppRole" CookiePath="/WordGame" AutoCompile="false" CSPZENEnabled="true" InboundWebServicesEnabled="false" UseSessionCookie="1"/>
 			
 			<IfDef Var="SourceDir">
 	            <Log Text="SourceDir defined - offline install from ${SourceDir}" Level="0"/>
