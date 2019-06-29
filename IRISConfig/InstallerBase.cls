@@ -133,6 +133,7 @@ Class IRISConfig.InstallerBase [ Abstract ]
 	
 			Set oCSPApp.DispatchClass="WordGame.disp"
 			Set oCSPApp.UseCookies=1
+			do oCSPApp.MatchRoles.Insert(":AppRole")
 			Set tSC = oCSPApp.%Save()
 			Quit:$System.Status.IsError(tSC)
 		}
