@@ -7,7 +7,7 @@ Method TestWordScoreAPI()
    set httprequest.Port="52773"
    set httprequest.Username="_SYSTEM"
    set httprequest.Password="SYS"
-  
+   set word="UKPartnerDay2019"
    Do httprequest.Get("/WordGame/score/1234",0)
    If $IsObject(httprequest.HttpResponse) {
      ; Read the web page
@@ -21,7 +21,7 @@ Method TestWordScoreAPI()
    }
 
 	// assertion 1
-	do $$$AssertEquals(responseStr."score",4, "Correct Score")
+	do $$$AssertEquals(responseStr."score",$LENGTH(word), "Correct Score")
 	quit $$$OK
 	
 }
