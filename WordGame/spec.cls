@@ -7,7 +7,7 @@ XData OpenAPI [ MimeType = application/json ]
   "swagger":"2.0",
   "info":{
     "title":"Word Game",
-    "version":"1.0.1",
+    "version":"1.0.0",
     "description":"REST backend for Scramble word game"
   },
   "paths":{
@@ -35,38 +35,9 @@ XData OpenAPI [ MimeType = application/json ]
           }
         ]
       }
-    },
-    "/words":{
-      "post":{
-        "summary":"Add a word to the dictionary",
-        "operationId":"AddWord",
-        "responses":{
-          "200":{
-            "description":"success"
-          }
-        },
-        "parameters":[
-          {
-            "in":"body",
-            "name":"body",
-            "required":true,
-            "schema":{
-              "$ref":"#/definitions/Word"
-            }
-          }
-        ]
-      }
     }
   },
   "definitions":{
-    "Word":{
-      "type":"object",
-      "properties":{
-        "word":{
-          "type":"string"
-        }
-      }
-    },
     "Score":{
       "type":"object",
       "properties":{
