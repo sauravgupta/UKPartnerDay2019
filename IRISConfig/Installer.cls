@@ -42,6 +42,7 @@ XData Install [ XMLNamespace = INSTALLER ]
 	            <Log Text="SourceDir defined - offline install from ${SourceDir}" Level="0"/>
 	            <Import File="${SourceDir}/WordGame" Recurse="true"/>
 	            <Import File="${SourceDir}/IRISConfig" Recurse="true"/>
+	            <Import File="${SourceDir}/Testing" Recurse="true"/>
 	        </IfDef>
 
 		</Namespace>
