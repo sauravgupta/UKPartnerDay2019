@@ -12,10 +12,7 @@
 
 # From now on, any error should interrupt the script
 set -e
-
-irissession IRIS
-
-
+docker exec -it my-iris bash
 # Running the Unit Tests...
 printf "\n\nRunning Unit Tests..."
 printf "%s\n%s\n%s\n%s\n" "_SYSTEM" "SYS" "zn \"DEMO\"" "Do ##class(Testing.WordGameTests).Run(1)" | irissession IRIS
