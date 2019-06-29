@@ -9,7 +9,7 @@ Method TestWordScoreAPI()
    set httprequest.Username="_SYSTEM"
    set httprequest.Password="SYS"
    set word="UKPartnerDay2019"
-   Do httprequest.Get("/WordGame/score/1234",0)
+   Do httprequest.Get("/WordGame/score/{word}",0)
    If $IsObject(httprequest.HttpResponse) {
      ; Read the web page
      Do httprequest.HttpResponse.Data.Rewind()

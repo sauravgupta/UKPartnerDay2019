@@ -126,6 +126,27 @@ ClassMethod CSPAppConfigureAsREST(pCSPAppName) As %Status
 		Quit tSC
 }
 
+ClassMethod CSPAppConfigureAsRESTWordGame(pCSPAppName) As %Status
+{
+		Set tSC = $System.Status.OK()
+		Try
+		{
+			Set oCSPApp = ##class(Security.Applications).%OpenId(pCSPAppName, , .tSC)
+	
+			Set oCSPApp.DispatchClass="WordGame.disp"
+			Set oCSPApp.UseCookies=1
+			do oCSPApp.MatchRoles.Insert(":AppRole")
+			Set tSC = oCSPApp.%Save()
+			Quit:$System.Status.IsError(tSC)
+		}
+		Catch (oException)
+		{
+			Set tSC = oException.AsStatus()
+		}
+	
+		Quit tSC
+}
+
 ClassMethod AddRoleToUser(pUserName As %String, pRole As %String) As %Status
 {
 		Quit ##class(Security.Users).AddRoles(pUserName, pRole)
