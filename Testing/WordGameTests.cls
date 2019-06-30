@@ -16,15 +16,16 @@ Method TestWordScoreAPI()
      set JSONResponseStr=httprequest.HttpResponse.Data.Read()
      Set JSONResponseObj = ##class(%DynamicObject).%FromJSON(JSONResponseStr)
      set score=JSONResponseObj.score
+     // assertion 1
+	 do $$$AssertEquals(score,$LENGTH(word)*10, "Correct Score")
      
    } Else {
      
      Set status = $$$ERROR($$$GeneralError,"API not working")
    }
 
-	// assertion 1
-	do $$$AssertEquals(score,$LENGTH(word)*10, "Correct Score")
-	quit $$$OK
+
+
 	
 }
 }
