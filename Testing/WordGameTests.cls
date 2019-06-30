@@ -22,7 +22,7 @@ Method TestWordScoreAPI()
    }
 
 	// assertion 1
-	do $$$AssertEquals(word,$LENGTH(word)*10, "Correct Score")
+	do $$$AssertEquals(responseStr.score,$LENGTH(word)*10, "Correct Score")
 	quit $$$OK
 	
 }
