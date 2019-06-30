@@ -28,6 +28,10 @@ printf "%s\n%s\nzn \"%s\"\nSet tSC=\$system.OBJ.Load(\"%s\",\"ck\")\n$VerifySC\n
 printf "\n\nRunning Installer..."
 printf "%s\n%s\n%s\n%s\n" "$IRIS_USERNAME" "$IRIS_PASSWORD" "zn \"%SYS\"" "Do ##class(IRISConfig.Installer).Install()" | irissession IRIS
 
+# Running the Unit Tests...
+printf "\n\nRunning Unit Tests..."
+printf "%s\n%s\n%s\n%s\n" "$IRIS_USERNAME" "$IRIS_PASSWORD" "zn \"DEMO\"" "Do ##class(Testing.WordGameTests).Run(1)" | irissession IRIS
+
 iris stop iris quietly
 
 
