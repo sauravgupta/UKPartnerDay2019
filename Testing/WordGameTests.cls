@@ -13,8 +13,8 @@ Method TestWordScoreAPI()
    If $IsObject(httprequest.HttpResponse) {
      ; Read the web page
      Do httprequest.HttpResponse.Data.Rewind()
-     set JSONObjStr=httprequest.HttpResponse.Data.Read()
-     set responseStr={}.%FromJSON(JSONObjStr)
+     set JSONResponse={}
+     set JSONResponse=httprequest.HttpResponse.Data.Read()
      
    } Else {
      
@@ -22,7 +22,7 @@ Method TestWordScoreAPI()
    }
 
 	// assertion 1
-	do $$$AssertEquals(responseStr.score,$LENGTH(word)*10, "Correct Score")
+	do $$$AssertEquals(JSONResponse.score,$LENGTH(word)*10, "Correct Score")
 	quit $$$OK
 	
 }
