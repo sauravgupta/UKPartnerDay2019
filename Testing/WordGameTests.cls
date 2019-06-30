@@ -15,6 +15,7 @@ Method TestWordScoreAPI()
      Do httprequest.HttpResponse.Data.Rewind()
      set JSONResponseStr=httprequest.HttpResponse.Data.Read()
      Set JSONResponseObj = ##class(%DynamicObject).%FromJSON(JSONResponseStr)
+     set score=JSONResponseObj.score
      
    } Else {
      
@@ -22,7 +23,7 @@ Method TestWordScoreAPI()
    }
 
 	// assertion 1
-	do $$$AssertEquals(JSONResponseObj.score,$LENGTH(word)*10, "Correct Score")
+	do $$$AssertEquals(score,$LENGTH(word)*10, "Correct Score")
 	quit $$$OK
 	
 }
