@@ -17,7 +17,7 @@ Method TestWordScoreAPI()
      Set JSONResponseObj = ##class(%DynamicObject).%FromJSON(JSONResponseStr)
      set score=JSONResponseObj.score
      // assertion 1
-	 do $$$AssertEquals(score,$LENGTH(word)*10, "Correct Score")
+	 do $$$AssertEquals(score,$LENGTH(word), "Correct Score")
      
    } Else {
      
