@@ -13,7 +13,7 @@ Parameter ExposeServerExceptions = 0;
 ClassMethod Score(word As %String) As %DynamicObject
 {
 	///This is a basic implementation
-    Quit { "score": ($length(word))}
+    Quit { "score": ($length(word)*5)}
 }
 
 }
